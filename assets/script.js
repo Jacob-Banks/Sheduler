@@ -1,11 +1,14 @@
 const now = moment().hour();
+const day = moment().format("dddd, MMMM Do YYYY");
 let schedTask = [];
+
+$("#currentDay").text(day);
 $(".time-block").each(function (index) {
-  if (now === parseInt(this.id)) {
+  if (now == this.id) {
     $(this).children("textarea").addClass("present");
     $(this).children("textarea").removeClass("past");
     $(this).children("textarea").removeClass("future");
-  } else if (now > parseInt(this.id)) {
+  } else if (now > this.id) {
     $(this).children("textarea").addClass("past");
     $(this).children("textarea").removeClass("present");
     $(this).children("textarea").removeClass("future");
