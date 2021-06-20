@@ -15,21 +15,22 @@ for (let i = 0; i < 9; i++) {
     time = 1;
   }
   //set whether am or pm
-  if (time > 8) {
+  if (time > 8 && time < 12) {
     meridiem = "AM";
   } else {
     meridiem = "PM";
   }
   //html content for time blocks //set the id to the 24 hour moment hours//
   let textBlock = `<div id="${i + 9}" class="row time-block">
-                   <div class="col-2 col-md-1 hour"><p class="my-3">${time}${meridiem}</p></div>
+                   <div class="col-2 col-md-1 hour para"><p>${time}${meridiem}</p></div>
                    <textarea class="col-8 col-md-10 description"></textarea>
-                   <button class="btn saveBtn col-2 col-md-1"><i class="far fa-save fa-2x"></i></button></div>`;
+                   <button class="btn saveBtn col-2 col-md-1"><i class="far fa-save fa-2x"></i></button>
+                   </div>`;
   $(".container").append(textBlock);
   time++;
 }
 
-// add the class that controls todo task despcription background
+// add the class that controls task despcription background
 const addTimeClass = function () {
   $(".time-block").each(function (index) {
     const now = moment().hour();
@@ -78,5 +79,5 @@ const refreshTaskClass = function () {
   console.log("test");
   setTimeout(refreshTaskClass, min);
 };
-// refresh description background once a new hour has been reached
+// refresh description background once a first new hour has been reached
 setTimeout(refreshTaskClass, nextHour.diff(moment()));
