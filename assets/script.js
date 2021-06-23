@@ -14,13 +14,13 @@ for (let i = 0; i < 9; i++) {
   if (time > 12) {
     time = 1;
   }
-  //set whether am or pm
+  //set whether am or pm //bad logic but it works for this.
   if (time > 8 && time < 12) {
     meridiem = "AM";
   } else {
     meridiem = "PM";
   }
-  //html content for time blocks //set the id to the 24 hour moment hours//
+  //html content for time blocks //set the id to the 24 hour moment hour clock//
   let textBlock = `<div id="${i + 9}" class="row time-block">
                    <div class="col-2 col-md-1 hour para"><p>${time}${meridiem}</p></div>
                    <textarea class="col-8 col-md-10 description"></textarea>
@@ -75,9 +75,9 @@ $(".time-block").each(function () {
 // refresh description every hour
 const refreshTaskClass = function () {
   addTimeClass();
-  let min = 60 * (1000 * 60);
+  let hour = 60 * (1000 * 60);
   console.log("test");
-  setTimeout(refreshTaskClass, min);
+  setTimeout(refreshTaskClass, hour);
 };
 // refresh description background once a first new hour has been reached
 setTimeout(refreshTaskClass, nextHour.diff(moment()));
