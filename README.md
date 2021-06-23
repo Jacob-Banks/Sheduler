@@ -15,4 +15,4 @@ https://jacob-banks.github.io/Sheduler/
 <p>HTML, CSS, JavaScript, Moment, Jquery, Bootstrap </p>
  
 <h4>Contribution</h4>
-Jacob Banks
+Jacob Banks and Bootcamp provided CSS and HTML
